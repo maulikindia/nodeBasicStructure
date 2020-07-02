@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var basicController = require('../controllers/demoController');
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
+//import controllers
+var userController = require('../controllers/userController');
 
-router.get('/all', basicController);
+router.get('/', userController.getUsers);
 
+router.post('/', userController.addUser);
+
+router.get('/byId',userController.getUserById);
 
 module.exports = router;
