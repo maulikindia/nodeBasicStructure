@@ -10,6 +10,7 @@ async function addUser(req, res) {
         if (err) {
             return res.json({ status: false, msg: err, data: [] });
         }
+        //get user func to get all users
         else if (data !== null) {
             return res.json({ status: true, msg: '', data: data });
         }
@@ -19,14 +20,13 @@ async function addUser(req, res) {
 };
 
 
-//get user func to get all users
 async function getUsers(req, res) {
     await userModel.find({}, async (err, data) => {
         if (err) {
             return res.json({ status: false, msg: err, data: [] });
         }
-        else if (data !== null) {
-            console.log(data);
+        // else if (data !== null) {
+            // console.log(data);
             return res.json({ status: true, msg: '', data: data });
         }
     });
