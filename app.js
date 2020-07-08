@@ -40,6 +40,12 @@ app.use(function (err, req, res, next) {
 
 
 console.log('server is running ....');
+let port = process.env.PORT || 5600;
+app.listen(port, async (err) => {
 
+  if (!err) {
+    console.log(`SERVER IS LISTENING ON ${port} `);
+  }
+})
 
 module.exports = app;
