@@ -39,7 +39,7 @@ app.use(function (err, req, res, next) {
 });
 
 
-console.log('server is running ....');
+require('dotenv').config();
 let port = process.env.PORT || 5600;
 app.listen(port, async (err) => {
 
