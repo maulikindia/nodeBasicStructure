@@ -25,8 +25,7 @@ async function getUsers(req, res) {
         if (err) {
             return res.json({ status: false, msg: err, data: [] });
         }
-        // else if (data !== null) {
-            // console.log(data);
+        else if (data !== null) {
             return res.json({ status: true, msg: '', data: data });
         }
     });
